@@ -1,12 +1,12 @@
 provider "aws" {
   region = "eu-central-1"
-  access_key = "AKIA25ZPUMYN2A4GFK3H"
-  secret_key = "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"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
 }
 
 resource "aws_key_pair" "terraform-ssh-key"{
     key_name = "terraform-ssh-key"
-    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDM3+VTefbrUdiuvtiQNMlUPh8UbA29bSIBCS//Kj5NSFONxZmDrW6m9s7yffA9EgsI2PeYMU4howdAd43I24VU3HRfgn8jLG4WSMlgAxQ5Ffd6KAunceQrWsCtLDR4d7XQEH/F4h43wyigVUMz7RaT0CLj0+cD11mnGjByRuGnb96rTYg835NHJsVam2jVkpHXx2GJVqBIfr1OH4g8CdbeFoxKe3psLuBQKqwD2UAJJZlsl0y8f2gFnMKLRfwaUZ7/dVLpd8LlQ49t5idWN7TeOEGUly6Es7+LDMla4Ejg6Q7tt6wcKzYPOAFDCEuz8mJvWnXrE5hnUm9A0mVJBTI6z/pwBhakBbKeoS83BZ5/6llyJ8jHbXVFOWQHGoKQvh7PNFb0HThKYQzfLgo1fnJFX2mi7HfNUl14p1d342nZHHdowOXT0gwnsZ1gOKmzGZSS7xrGPHPNRy3BkjmcMOFBCEJ8xIssiqz/g+ZJIP+0ttQp4uMqycfZT3AyFPI2YUU= hodiy@DESKTOP-EUO0MDS"
+    public_key = var.aws_public_key
 }
 
 resource "aws_instance" "example" {
